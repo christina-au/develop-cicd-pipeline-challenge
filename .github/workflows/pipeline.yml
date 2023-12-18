@@ -4,7 +4,7 @@ env:
 on: [push]
 
 jobs: 
-  lint: 
+  test: 
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
@@ -17,7 +17,7 @@ jobs:
       run: python hello.py
 
   build: 
-    needs: [lint]
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
